@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("minesweeper")]
+[assembly: AssemblyTitle("WindowsFormsApp4")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Deer Valley Unified School District")]
-[assembly: AssemblyProduct("minesweeper")]
+[assembly: AssemblyProduct("WindowsFormsApp4")]
 [assembly: AssemblyCopyright("Copyright © Deer Valley Unified School District 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2a65d44b-9ee6-46d8-bd42-6a9bd0c206b0")]
+[assembly: Guid("277fbf9f-0b18-4ad7-88a5-cd53cb97fa11")]
 
 // Version information for an assembly consists of the following four values:
 //

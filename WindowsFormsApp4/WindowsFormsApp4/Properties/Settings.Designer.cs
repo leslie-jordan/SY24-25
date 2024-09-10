@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace minesweeper.Properties
+namespace WindowsFormsApp4.Properties
 {
 
 
