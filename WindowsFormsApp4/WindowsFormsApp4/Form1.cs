@@ -20,13 +20,7 @@ namespace WindowsFormsApp4
         public Form1()
         {
             InitializeComponent();
-
-            for (int i = 0; i < 100; i++)
-            {
-                btnGrid[i] = (Button)Controls["button" +(i + 1)];
-                tileGrid[i] = new tile(btnGrid[i]);
-                btnGrid[i].BackColor = Color.Green;
-            }
+            reset();
         }
         private Button getButton(int r, int c)
         {
@@ -72,6 +66,21 @@ namespace WindowsFormsApp4
         private void button1_Click(object sender, EventArgs e)
         {
             getIndex(sender as Button);
+        }
+
+        private void button101_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void reset()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                btnGrid[i] = (Button)Controls["button" + (i + 1)];
+                tileGrid[i] = new tile(btnGrid[i]);
+                btnGrid[i].BackColor = Color.Green;
+            }
         }
     }
 }
