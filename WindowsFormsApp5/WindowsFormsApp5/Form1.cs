@@ -33,13 +33,27 @@ namespace WindowsFormsApp5
             {
                 score1 = score1 + 1;
                 label1.Text = score1.ToString();
+                if (score1 == 10)
+                {
+                    label9.Text = "player 1 wins";
+                    button1.Enabled = false;
+                }
             }
             if (Math.Abs(num - playertwo) < Math.Abs(num - playerone))
             {
                 score2 = score2 + 1;
                 label2.Text = score2.ToString();
-
+                if (score2 == 10)
+                {
+                    label9.Text = "player 2 wins";
+                    button1.Enabled = false;
+                }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
