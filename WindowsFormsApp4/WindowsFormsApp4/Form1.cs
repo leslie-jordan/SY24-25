@@ -38,24 +38,6 @@ namespace WindowsFormsApp4
         {
             Button b = sender as Button;
             b.BackColor = Color.Red;
-            /*if (e.Button == MouseButtons.Right)
-            {
-                if (!flag)
-                {
-                    button.BackgroundImage = pictureBox1.Image;
-
-                }
-                else
-                {
-                    button.BackgroundImage = null;
-                }
-                flag = !flag;
-                if (e.Button == MouseButtons.Left)
-                {
-                    button1.BackgroundImage = pictureBox2.Image;
-                }
-
-            }*/
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -79,7 +61,6 @@ namespace WindowsFormsApp4
             {
                 btnGrid[i] = (Button)Controls["button" + (i + 1)];
                 tileGrid[i] = new tile(btnGrid[i]);
-                btnGrid[i].BackColor = Color.Green;
             }
         }
     }
