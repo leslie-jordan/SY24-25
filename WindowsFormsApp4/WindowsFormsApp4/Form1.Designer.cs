@@ -129,11 +129,11 @@
             this.button98 = new System.Windows.Forms.Button();
             this.button99 = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.flagpictureBox = new System.Windows.Forms.PictureBox();
+            this.minepictureBox = new System.Windows.Forms.PictureBox();
             this.button101 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flagpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minepictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -1237,29 +1237,31 @@
             this.button100.UseVisualStyleBackColor = false;
             this.button100.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
             // 
-            // pictureBox1
+            // flagpictureBox
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(430, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 100;
-            this.pictureBox1.TabStop = false;
+            this.flagpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("flagpictureBox.Image")));
+            this.flagpictureBox.Location = new System.Drawing.Point(430, 12);
+            this.flagpictureBox.Name = "flagpictureBox";
+            this.flagpictureBox.Size = new System.Drawing.Size(100, 50);
+            this.flagpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.flagpictureBox.TabIndex = 100;
+            this.flagpictureBox.TabStop = false;
+            this.flagpictureBox.Visible = false;
             // 
-            // pictureBox2
+            // minepictureBox
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(430, 63);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 101;
-            this.pictureBox2.TabStop = false;
+            this.minepictureBox.Image = ((System.Drawing.Image)(resources.GetObject("minepictureBox.Image")));
+            this.minepictureBox.Location = new System.Drawing.Point(430, 63);
+            this.minepictureBox.Name = "minepictureBox";
+            this.minepictureBox.Size = new System.Drawing.Size(100, 50);
+            this.minepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.minepictureBox.TabIndex = 101;
+            this.minepictureBox.TabStop = false;
+            this.minepictureBox.Visible = false;
             // 
             // button101
             // 
-            this.button101.Location = new System.Drawing.Point(430, 119);
+            this.button101.Location = new System.Drawing.Point(430, 387);
             this.button101.Name = "button101";
             this.button101.Size = new System.Drawing.Size(100, 23);
             this.button101.TabIndex = 102;
@@ -1273,8 +1275,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 422);
             this.Controls.Add(this.button101);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.minepictureBox);
+            this.Controls.Add(this.flagpictureBox);
             this.Controls.Add(this.button51);
             this.Controls.Add(this.button52);
             this.Controls.Add(this.button53);
@@ -1378,8 +1380,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flagpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minepictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1486,8 +1488,8 @@
         private System.Windows.Forms.Button button98;
         private System.Windows.Forms.Button button99;
         private System.Windows.Forms.Button button100;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox flagpictureBox;
+        private System.Windows.Forms.PictureBox minepictureBox;
         private System.Windows.Forms.Button button101;
     }
 }

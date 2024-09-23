@@ -36,8 +36,9 @@ namespace WindowsFormsApp4
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
-            Button b = sender as Button;
-            b.BackColor = Color.Red;
+           Button b = sender as Button;
+            tile t = tileGrid[getIndex(b)];
+            t.setflag(true);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,6 +62,10 @@ namespace WindowsFormsApp4
             {
                 btnGrid[i] = (Button)Controls["button" + (i + 1)];
                 tileGrid[i] = new tile(btnGrid[i]);
+                tileGrid[i].setflagimage(flagpictureBox.Image);
+                tileGrid[i].setmineimage(minepictureBox.Image);
+                //tileGrid[i].setflag(true);
+                tileGrid[i].setmine(false);
             }
         }
     }
