@@ -33,6 +33,16 @@ namespace WindowsFormsApp4
         int.TryParse(tmp, out retVal);
         return retVal -1;
     }
+        private void setCounts()
+        {
+            //for every tile on the board
+            for (int i = 0; i < 100; i++)
+            {
+                tileGrid[i].setnearby(1);
+            }
+            //add one for each adjacent mine
+            //set that count into the tile
+        }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
