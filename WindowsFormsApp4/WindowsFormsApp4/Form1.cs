@@ -38,7 +38,14 @@ namespace WindowsFormsApp4
         {
            Button b = sender as Button;
             tile t = tileGrid[getIndex(b)];
-            t.setflag(true);
+            if (e.Button == MouseButtons.Right)
+            {
+                t.setflag();
+            }
+            else
+            {
+                t.setdug();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,7 +62,7 @@ namespace WindowsFormsApp4
         {
             reset();
         }
-
+   
         private void reset()
         {
             for (int i = 0; i < 100; i++)
@@ -65,7 +72,23 @@ namespace WindowsFormsApp4
                 tileGrid[i].setflagimage(flagpictureBox.Image);
                 tileGrid[i].setmineimage(minepictureBox.Image);
                 //tileGrid[i].setflag(true);
-                tileGrid[i].setmine(false);
+            }
+            createmines(5);
+        }
+        private void createmines(int numMines)
+        {
+            int mineCount = 0;
+            //until we have enough mines
+            while (mineCount < numMines)
+            {
+                //generate number 1-100
+                int rNum = random.Next(0, 101);
+                if (tileGrid[rNum].getmine() == false)
+                {
+                    mineCount++;
+                    tileGrid[rNum].setmine(true);
+                }
+                //set mine on that tile if it doesn't already have a mine
             }
         }
     }

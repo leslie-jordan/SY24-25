@@ -15,8 +15,8 @@ namespace WindowsFormsApp4
         private bool m_dug;
         private bool m_mine;
         private int m_nearby;
-        private Image m_flagimage;
-        private Image m_mineimage;
+        private Image m_flagImage;
+        private Image m_mineImage;
         public tile(Button b)
         {
             m_b = b;
@@ -28,25 +28,40 @@ namespace WindowsFormsApp4
         }
         public void setflagimage(Image flagImage)
         {
-            m_flagimage = flagImage;
+            m_flagImage = flagImage;
         }
         public void setmineimage(Image mineImage)
         {
-            m_mineimage = mineImage;
+            m_mineImage = mineImage;
         }
         public void setmine(Boolean b)
         { 
-            m_mine = b; 
-            m_b.BackgroundImage = m_mineimage;
+            m_mine = b;
         }
-        public void setdug(Boolean b)
+        public Boolean getmine()
         {
-            m_dug = b;
+            return m_mine;
         }
-        public void setflag(Boolean b)
+        public void setdug()
         {
-            m_flag = b;
-            m_b.BackgroundImage = m_flagimage;
+            m_dug = true;
+            if (m_mine)
+            {
+                m_b.BackgroundImage = m_mineImage;
+            }
+        }
+        public void setflag()
+        {
+            m_flag = !m_flag;
+            m_b.BackgroundImage = m_flagImage;
+            if (m_flag)
+            {
+                m_b.BackgroundImage = m_flagImage;
+            }
+            else 
+            {
+                m_b.BackgroundImage = null;
+            }
         }
     }
 }
