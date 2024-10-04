@@ -151,12 +151,18 @@ namespace WindowsFormsApp4
                     {
                         count++;
                     }
+                }
+                for (int i = 0; i < 100; i++)
+                {
                     if (count == 95)
                     {
-                        win();
+                        label1.Visible = true;
+                        btnGrid[i].BackColor = Color.Green;
                     }
                 }
+                
             }
+
             if (e.Button == MouseButtons.Left && t.getmine())
             {
                 label2.Visible = true;
@@ -169,14 +175,7 @@ namespace WindowsFormsApp4
             }
         }
 
-        private void win()
-        {
-            label1.Visible = true;
-            for (int i = 0; i < 100; i++)
-            {
-                btnGrid[i].BackColor = Color.Green;
-            }
-        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
        
