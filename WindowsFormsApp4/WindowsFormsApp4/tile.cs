@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,24 @@ namespace WindowsFormsApp4
             m_b = b;
             m_b.BackColor = Color.Green;
         }
+
+        private int getindex(Button b)
+        {
+            string tmp = b.Name.Substring(6);
+            int retval = 0;
+            int.TryParse(tmp, out retval);
+            return retval - 1;
+        }
+        private void getrc(Button b, out int r, out int c)
+        {
+            int i = getindex(b);
+            r = i / 10 + 1;
+            c = i % 10;
+        }
         public void setnearby(int n)
         {
             m_nearby = n;
+            m_b.Text = m_nearby.ToString();
         }
         public void setflagimage(Image flagImage)
         {
@@ -37,6 +53,7 @@ namespace WindowsFormsApp4
         public void setmine(Boolean b)
         { 
             m_mine = b;
+            m_b.BackgroundImage = m_mineImage;
         }
         public Boolean getmine()
         {
@@ -45,10 +62,16 @@ namespace WindowsFormsApp4
         public void setdug()
         {
             m_dug = true;
+            m_b.BackColor = Color.Gray;
             if (m_mine)
             {
                 m_b.BackgroundImage = m_mineImage;
             }
+        }
+
+        public Boolean getdug()
+        {
+            return m_dug;
         }
         public void setflag()
         {

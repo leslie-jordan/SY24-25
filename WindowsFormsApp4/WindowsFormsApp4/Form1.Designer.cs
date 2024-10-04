@@ -132,6 +132,8 @@
             this.flagpictureBox = new System.Windows.Forms.PictureBox();
             this.minepictureBox = new System.Windows.Forms.PictureBox();
             this.button101 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.flagpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minepictureBox)).BeginInit();
             this.SuspendLayout();
@@ -1269,11 +1271,35 @@
             this.button101.UseVisualStyleBackColor = true;
             this.button101.Click += new System.EventHandler(this.button101_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(404, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 32);
+            this.label1.TabIndex = 103;
+            this.label1.Text = "you win!";
+            this.label1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(393, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 32);
+            this.label2.TabIndex = 104;
+            this.label2.Text = "you lose!";
+            this.label2.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 422);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button101);
             this.Controls.Add(this.minepictureBox);
             this.Controls.Add(this.flagpictureBox);
@@ -1383,6 +1409,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.flagpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minepictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1491,6 +1518,8 @@
         private System.Windows.Forms.PictureBox flagpictureBox;
         private System.Windows.Forms.PictureBox minepictureBox;
         private System.Windows.Forms.Button button101;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
