@@ -100,6 +100,47 @@ namespace WindowsFormsApp4
             {
                 t.setflag();
             }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                int r = 0;
+                int c = 0;
+                getrc(b, out r, out c);
+                if (countAdjacent(r,c) == countflags(r,c))
+                {
+                    if (r > 1 && c > 1)
+                    {
+                        tileGrid[getIndex(getButton(r - 1, c - 1))].setdug();
+                    }
+                    if (r > 1)
+                    {
+                        tileGrid[getIndex(getButton(r - 1, c))].setdug();
+                    }
+                    if (r > 1 && c < 10)
+                    {
+                        tileGrid[getIndex(getButton(r - 1, c + 1))].setdug();
+                    }
+                    if (c > 1)
+                    {
+                        tileGrid[getIndex(getButton(r, c - 1))].setdug();
+                    }
+                    if (c < 10)
+                    {
+                        tileGrid[getIndex(getButton(r, c + 1))].setdug();
+                    }
+                    if (r < 10 && c > 1)
+                    {
+                        tileGrid[getIndex(getButton(r + 1, c - 1))].setdug();
+                    }
+                    if (r < 10)
+                    {
+                        tileGrid[getIndex(getButton(r + 1, c))].setdug();
+                    }
+                    if (r < 10 && c < 10)
+                    {
+                        tileGrid[getIndex(getButton(r + 1, c + 1))].setdug();
+                    }
+                }
+            }
             else
             {
                 t.setdug();
@@ -113,11 +154,6 @@ namespace WindowsFormsApp4
                     if (count == 95)
                     {
                         win();
-                    }
-                    {
-                        int r = 0;
-                        int c = 0;
-                        getrc(b, out r, out c);
                     }
                 }
             }
@@ -158,6 +194,8 @@ namespace WindowsFormsApp4
    
         private void reset()
         {
+            label1.Visible = false;
+            label2.Visible= false;
             for (int i = 0; i < 100; i++)
             {
                 btnGrid[i] = (Button)Controls["button" + (i + 1)];
@@ -193,5 +231,43 @@ namespace WindowsFormsApp4
                 //set mine on that tile if it doesn't already have a mine
             }
         }
+
+        private int countflags(int r, int c)
+        {
+            int count = 0;
+            if (r > 1 && c > 1)
+            {
+                if (tileGrid[getIndex(getButton(r - 1, c - 1))].getflag()) count++;
+            }
+            if (r > 1)
+            {
+                if (tileGrid[getIndex(getButton(r - 1, c))].getflag()) count++;
+            }
+            if (r > 1 && c < 10)
+            {
+                if (tileGrid[getIndex(getButton(r - 1, c + 1))].getflag()) count++;
+            }
+            if (c > 1)
+            {
+                if (tileGrid[getIndex(getButton(r, c - 1))].getflag()) count++;
+            }
+            if (c < 10)
+            {
+                if (tileGrid[getIndex(getButton(r, c + 1))].getflag()) count++;
+            }
+            if (r < 10 && c > 1)
+            {
+                if (tileGrid[getIndex(getButton(r + 1, c - 1))].getflag()) count++;
+            }
+            if (r < 10)
+            {
+                if (tileGrid[getIndex(getButton(r + 1, c))].getflag()) count++;
+            }
+            if (r < 10 && c < 10)
+            {
+                if (tileGrid[getIndex(getButton(r + 1, c + 1))].getflag()) count++;
+            }
+            return count;
+    }
     }
 }

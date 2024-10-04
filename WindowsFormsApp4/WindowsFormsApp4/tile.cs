@@ -86,5 +86,9 @@ namespace WindowsFormsApp4
                 m_b.BackgroundImage = null;
             }
         }
+        public Boolean getflag()
+        {
+            return m_flag;
+        }
     }
 }
