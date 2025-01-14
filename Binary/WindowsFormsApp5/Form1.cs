@@ -29,7 +29,6 @@ namespace WindowsFormsApp5
         if (bits[6] != 0) { total += 128; }
         if (bits[7] != 0) { total += 256; }
         label1.Text = total.ToString();
-
         }
 
         private void Bit8_TextChanged(object sender, EventArgs e)
@@ -60,10 +59,10 @@ namespace WindowsFormsApp5
             else
                 bits[4] = 0;
             //bit6
-            if (bit5.Text == "5")
-                bits[4] = 1;
+            if (bit6.Text == "5")
+                bits[5] = 1;
             else
-                bits[4] = 0;
+                bits[5] = 0;
             //bit7
             if (bit7.Text == "7")
                 bits[6] = 1;
@@ -71,6 +70,86 @@ namespace WindowsFormsApp5
                 bits[6] = 0;
             //bit8
             if (bit8.Text == "8")
+                bits[7] = 1;
+            else
+                bits[7] = 0;
+            //bitB1
+            if (bitB1.Text == "1")
+                bits[0] = 1;
+            else
+                bits[0] = 0;
+            //bitB2
+            if (bitB2.Text == "2")
+                bits[1] = 1;
+            else
+                bits[1] = 0;
+            //bitB3
+            if (bitB3.Text == "3")
+                bits[2] = 1;
+            else
+                bits[2] = 0;
+            //bitB4
+            if (bitB4.Text == "4")
+                bits[3] = 1;
+            else
+                bits[3] = 0;
+            //bitB5
+            if (bitB5.Text == "5")
+                bits[4] = 1;
+            else
+                bits[4] = 0;
+            //bitB6
+            if (bitB6.Text == "5")
+                bits[5] = 1;
+            else
+                bits[5] = 0;
+            //bitB7
+            if (bitB7.Text == "7")
+                bits[6] = 1;
+            else
+                bits[6] = 0;
+            //bitB8
+            if (bitB8.Text == "8")
+                bits[7] = 1;
+            else
+                bits[7] = 0;
+            //bitB1
+            if (bitC1.Text == "1")
+                bits[0] = 1;
+            else
+                bits[0] = 0;
+            //bitB2
+            if (bitC2.Text == "2")
+                bits[1] = 1;
+            else
+                bits[1] = 0;
+            //bitB3
+            if (bitC3.Text == "3")
+                bits[2] = 1;
+            else
+                bits[2] = 0;
+            //bitB4
+            if (bitC4.Text == "4")
+                bits[3] = 1;
+            else
+                bits[3] = 0;
+            //bitB5
+            if (bitC5.Text == "5")
+                bits[4] = 1;
+            else
+                bits[4] = 0;
+            //bitB6
+            if (bitC6.Text == "5")
+                bits[5] = 1;
+            else
+                bits[5] = 0;
+            //bitB7
+            if (bitC7.Text == "7")
+                bits[6] = 1;
+            else
+                bits[6] = 0;
+            //bitB8
+            if (bitC8.Text == "8")
                 bits[7] = 1;
             else
                 bits[7] = 0;
