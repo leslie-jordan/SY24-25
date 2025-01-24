@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Schema;
 
 namespace WindowsFormsApp5
 {
@@ -25,47 +26,30 @@ namespace WindowsFormsApp5
         }
         private void Calc()
         {
-        totalA = 0;
-        if (bits[0] != 0) { totalA += 1; }
-        if (bits[1] != 0) { totalA += 2; }
-        if (bits[2] != 0) { totalA += 4; }
-        if (bits[3] != 0) { totalA += 8; }
-        if (bits[4] != 0) { totalA += 16; }
-        if (bits[5] != 0) { totalA += 32; }
-        if (bits[6] != 0) { totalA += 64; }
-        if (bits[7] != 0) { totalA += 128; }
-        label2.Text = totalA.ToString();
+            totalA = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                if (bits[i] != 0) { totalA += (int)Math.Pow(2, i); }
+            }
+            label2.Text = totalA.ToString();
         }
         private void CalcB()
         {
             totalB = 0;
-            if (bitsB[0] != 0) { totalB += 1; }
-            if (bitsB[1] != 0) { totalB += 2; }
-            if (bitsB[2] != 0) { totalB += 4; }
-            if (bitsB[3] != 0) { totalB += 8; }
-            if (bitsB[4] != 0) { totalB += 16; }
-            if (bitsB[5] != 0) { totalB += 32; }
-            if (bitsB[6] != 0) { totalB += 64; }
-            if (bitsB[7] != 0) { totalB += 128; }
+            for (int i = 0; i < 8; i++)
+            {
+                if (bitsB[i] != 0) { totalB += (int)Math.Pow(2, i); }
+            }
             label3.Text = totalB.ToString();
         }
         private void CalcC()
         {
             totalC = 0;
-            if (bitsC[0] != 0) { totalC += 1; }
-            if (bitsC[1] != 0) { totalC += 2; }
-            if (bitsC[2] != 0) { totalC += 4; }
-            if (bitsC[3] != 0) { totalC += 8; }
-            if (bitsC[4] != 0) { totalC += 16; }
-            if (bitsC[5] != 0) { totalC += 32; }
-            if (bitsC[6] != 0) { totalC += 64; }
-            if (bitsC[7] != 0) { totalC += 128; }
+            for (int i = 0; i < 8; i++)
+            {
+                if (bitsC[i] != 0) { totalC += (int)Math.Pow(2, i); }
+            }
             label4.Text = totalC.ToString();
-        }
-
-        private void Bit8_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void bit1_MouseDown(object sender, MouseEventArgs e)
@@ -117,9 +101,9 @@ namespace WindowsFormsApp5
                 bits[7] = 0;
             //bitB1
             if (bitB1.Text == "1")
-                bits[0] = 1;
+                bitsB[0] = 1;
             else
-                bits[0] = 0;
+                bitsB[0] = 0;
             //bitB2
             if (bitB2.Text == "1")
                 bitsB[1] = 1;
@@ -285,10 +269,110 @@ namespace WindowsFormsApp5
 
         private void button4_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < bits.Length; i++)
+            for (int i = 7; i > 0; i--)
             {
-
+                bits[i] = bits[i - 1];
+                bitsB[i] = bitsB[i - 1];
+                bitsC[i] = bitsC[i - 1];
             }
+            Update();
+            Calc();
+            UpdateB();
+            CalcB();
+            UpdateC();
+            CalcC();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                bits[i] = bits[i + 1];
+                bitsB[i] = bitsB[i + 1];
+                bitsC[i] = bitsC[i + 1];
+            }
+            Update();
+            Calc();
+            UpdateB();
+            CalcB();
+            UpdateC();
+            CalcC();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            int carry = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                bitsC[i] = bits[i] + bitsB[i] + carry;
+                carry = 0;
+                if (bitsC[i] == 2)
+                {
+                    bitsC[i] = 0;
+                    carry = 1;
+                }
+                else if (bitsC[i] == 3)
+                {
+                    bitsC[i] = 1;
+                    carry = 1;
+                }
+            }
+            UpdateC();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                bitsC[i] = bits[i] * bitsB[i];
+            }
+            UpdateC();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                bitsC[i] = bits[i] + bitsB[i];
+                if (bitsC[i] == 2)
+                    bitsC[i] = 1;
+                else
+                    bitsC[i] = 0;
+            }
+            UpdateC();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                bitsC[i] = bits[i] + bitsB[i];
+                if (bitsC[i] == 2 || bitsC[i] == 0)
+                    bitsC[i] = 0;
+                else
+                    bitsC[i] = 1;
+            }
+            UpdateC();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            int carry = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                bitsC[i] = bits[i] - bitsB[i] + carry;
+                carry = 0;
+                if (bitsC[i] == -1)
+                {
+                    bitsC[i] = 1;
+                    carry = -1;
+                }
+                else if (bitsC[i] == 0)
+                {
+                    bitsC[i] = 0;
+                }
+            }
+            UpdateC();
         }
     }
-    }
+}
