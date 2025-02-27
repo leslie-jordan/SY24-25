@@ -8,7 +8,7 @@ namespace Quartet
 {
     internal class Hand
     {
-        List<CarCard> carCards;
+        List<CarCard> carCards = new List<CarCard>();
         public CarCard topCard()
         {
             return carCards[0];

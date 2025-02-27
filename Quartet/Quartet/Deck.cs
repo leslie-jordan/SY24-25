@@ -28,10 +28,11 @@ namespace Quartet
         }
         public CarCard GetCard(int index)
         {
-            CarCard C = carCards[index]; 
+            CarCard C = carCards[index];
             carCards.RemoveAt(index);
             return C;
         }
+       
         public override string ToString()
         {
             string retVal = "Deck:\n";

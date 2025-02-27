@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,6 +53,10 @@ namespace QuartetGame
 
         List<CarCard> list = new List<CarCard>();
         Deck d;
+        Hand h1 = new Hand();
+        Hand h2 = new Hand();
+        Hand h3 = new Hand();
+        Hand h4 = new Hand();
         private void Form1_Load(object sender, EventArgs e)
         {
             list.Add(A1);
@@ -91,16 +96,36 @@ namespace QuartetGame
         }
         private void ShowCard1(CarCard c)
         {
-            pictureBox1.Load(c.id + ".jpg");
-            textBox1.Text = c.maxspeed.ToString();
-            textBox2.Text = c.zerotosixty.ToString();
-            textBox3.Text = c.hp.ToString();
-            textBox4.Text = c.cc.ToString();
-            textBox5.Text = c.cylinders.ToString();
-            textBox6.Text = c.rpm.ToString();
+            if (c == null)
+            {
+                pictureBox1.Image = null;
+                textBox1.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                return;
+            }
+                pictureBox1.Load(c.id + ".jpg");
+                textBox1.Text = c.maxspeed.ToString();
+                textBox2.Text = c.zerotosixty.ToString();
+                textBox3.Text = c.hp.ToString();
+                textBox4.Text = c.cc.ToString();
+                textBox5.Text = c.cylinders.ToString();
+                textBox6.Text = c.rpm.ToString();
         }
         private void ShowCard2(CarCard c)
         {
+            if (c == null)
+            {
+                pictureBox1.Image = null;
+                textBox1.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                return;
+            }
             pictureBox2.Load(c.id + ".jpg");
             textBox7.Text = c.maxspeed.ToString();
             textBox8.Text = c.zerotosixty.ToString();
@@ -111,6 +136,16 @@ namespace QuartetGame
         }
         private void ShowCard3(CarCard c)
         {
+            if (c == null)
+            {
+                pictureBox1.Image = null;
+                textBox1.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                return;
+            }
             pictureBox3.Load(c.id + ".jpg");
             textBox13.Text = c.maxspeed.ToString();
             textBox14.Text = c.zerotosixty.ToString();
@@ -121,6 +156,16 @@ namespace QuartetGame
         }
         private void ShowCard4(CarCard c)
         {
+            if (c == null)
+            {
+                pictureBox1.Image = null;
+                textBox1.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                return;
+            }
             pictureBox4.Load(c.id + ".jpg");
             textBox19.Text = c.maxspeed.ToString();
             textBox20.Text = c.zerotosixty.ToString();
@@ -132,10 +177,24 @@ namespace QuartetGame
 
         public void button1_Click(object sender, EventArgs e)
         {
-            ShowCard1(d.GetCard(0));
-            ShowCard2(d.GetCard(0));
-            ShowCard3(d.GetCard(0));
-            ShowCard4(d.GetCard(0));
+            ShowCard1(h1.topCard());
+            ShowCard2(h2.topCard());
+            ShowCard3(h3.topCard());
+            ShowCard4(h4.topCard());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //shuffle deck
+            d.Shuffle();
+            //deal cards
+            while (!d.IsEmpty())
+            {
+                h1.Add(d.GetCard(0));
+                h2.Add(d.GetCard(0));
+                h3.Add(d.GetCard(0));
+                h4.Add(d.GetCard(0));
+            }
         }
     }
 }
