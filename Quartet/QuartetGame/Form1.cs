@@ -89,7 +89,7 @@ namespace QuartetGame
             d = new Deck(list);
             d.Shuffle();
         }
-        private void ShowCard(CarCard c)
+        private void ShowCard1(CarCard c)
         {
             pictureBox1.Load(c.id + ".jpg");
             textBox1.Text = c.maxspeed.ToString();
@@ -99,10 +99,43 @@ namespace QuartetGame
             textBox5.Text = c.cylinders.ToString();
             textBox6.Text = c.rpm.ToString();
         }
+        private void ShowCard2(CarCard c)
+        {
+            pictureBox2.Load(c.id + ".jpg");
+            textBox7.Text = c.maxspeed.ToString();
+            textBox8.Text = c.zerotosixty.ToString();
+            textBox9.Text = c.hp.ToString();
+            textBox10.Text = c.cc.ToString();
+            textBox11.Text = c.cylinders.ToString();
+            textBox12.Text = c.rpm.ToString();
+        }
+        private void ShowCard3(CarCard c)
+        {
+            pictureBox3.Load(c.id + ".jpg");
+            textBox13.Text = c.maxspeed.ToString();
+            textBox14.Text = c.zerotosixty.ToString();
+            textBox15.Text = c.hp.ToString();
+            textBox16.Text = c.cc.ToString();
+            textBox17.Text = c.cylinders.ToString();
+            textBox18.Text = c.rpm.ToString();
+        }
+        private void ShowCard4(CarCard c)
+        {
+            pictureBox4.Load(c.id + ".jpg");
+            textBox19.Text = c.maxspeed.ToString();
+            textBox20.Text = c.zerotosixty.ToString();
+            textBox21.Text = c.hp.ToString();
+            textBox22.Text = c.cc.ToString();
+            textBox23.Text = c.cylinders.ToString();
+            textBox24.Text = c.rpm.ToString();
+        }
 
         public void button1_Click(object sender, EventArgs e)
         {
-            ShowCard(d.GetCard(0));
+            ShowCard1(d.GetCard(0));
+            ShowCard2(d.GetCard(0));
+            ShowCard3(d.GetCard(0));
+            ShowCard4(d.GetCard(0));
         }
     }
 }
