@@ -48,6 +48,7 @@ namespace Quartet
                 retVal += card.ToString();
             }
             return retVal;
+            //g
         }
     }
 }
