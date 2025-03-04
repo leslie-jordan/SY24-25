@@ -106,7 +106,7 @@ namespace QuartetGame
                 textBox6.Text = "";
                 return;
             }
-                pictureBox1.Load(c.id + ".jpg");
+                pictureBox1.Load("..\\..\\properties\\" + c.id + ".jpg");
                 textBox1.Text = c.maxspeed.ToString();
                 textBox2.Text = c.zerotosixty.ToString();
                 textBox3.Text = c.hp.ToString();
@@ -126,7 +126,7 @@ namespace QuartetGame
                 textBox6.Text = "";
                 return;
             }
-            pictureBox2.Load(c.id + ".jpg");
+            pictureBox2.Load("..\\..\\properties\\" + c.id + ".jpg");
             textBox7.Text = c.maxspeed.ToString();
             textBox8.Text = c.zerotosixty.ToString();
             textBox9.Text = c.hp.ToString();
@@ -146,7 +146,7 @@ namespace QuartetGame
                 textBox6.Text = "";
                 return;
             }
-            pictureBox3.Load(c.id + ".jpg");
+            pictureBox3.Load("..\\..\\properties\\" + c.id + ".jpg");
             textBox13.Text = c.maxspeed.ToString();
             textBox14.Text = c.zerotosixty.ToString();
             textBox15.Text = c.hp.ToString();
@@ -166,7 +166,7 @@ namespace QuartetGame
                 textBox6.Text = "";
                 return;
             }
-            pictureBox4.Load(c.id + ".jpg");
+            pictureBox4.Load("..\\..\\properties\\" + c.id + ".jpg");
             textBox19.Text = c.maxspeed.ToString();
             textBox20.Text = c.zerotosixty.ToString();
             textBox21.Text = c.hp.ToString();
